@@ -7,6 +7,13 @@ Install dependencies
 
 	npm install
 
+Configure
+
+	cp etc/config.template.json etc/config.json
+
+> Then add the application secret into the config.
+
+
 Prepare
 
 	mv /usr/local/bin/dptool $PWD/index.js
