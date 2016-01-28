@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Processing response</title>
+	<style type="text/css">
+	body {
+		font-family: "Arial", "sans-serif";
+		background: #eaeaea;
+		color: #333;
+		padding: 4em;
+		margin: 4em;
+		border: 1px solid #aaa;
+	}
+	</style>
+	<script type="text/javascript">
+
+		var myWindow = window.open("", "_self");
+		myWindow.document.write("");
+		setTimeout (function() {myWindow.close();},5000);
+		
+	</script>
+</head>
+<body>
+
+	<h1>Successfully processed response.</h1>
+	<p>Please close this window, and return to the command line.</p>
+
+</body>
+</html>

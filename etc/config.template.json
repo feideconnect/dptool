@@ -1,0 +1,12 @@
+{
+    "authorization": "https://auth.feideconnect.no/oauth/authorization",
+    "token": "https://auth.feideconnect.no/oauth/token",
+    "client_id": "fcff68d2-b909-4cfa-9e15-82ce8b8d456c",
+    "client_secret": "xxxxx",
+    "redirect_uri": "http://127.0.0.1:12012/callback",
+	"apis": {
+		"auth": "https://auth.feideconnect.no",
+		"core": "https://api.feideconnect.no",
+		"groups": "https://groups-api.feideconnect.no"
+	}
+}

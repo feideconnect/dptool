@@ -1,0 +1,29 @@
+{
+  "name": "dptool",
+  "version": "1.0.0",
+  "description": "CLI tool to interact with Dataporten APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "authentication",
+    "authorization",
+    "cli",
+    "tool",
+    "apis"
+  ],
+  "author": "Andreas Åkre Solberg <andreas.solberg@uninett.no>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "cliff": "^0.1.10",
+    "easy-table": "^1.0.0",
+    "express": "^4.13.4",
+    "minimist": "^1.2.0",
+    "moment": "^2.11.1",
+    "openurl": "^1.1.1",
+    "request": "^2.69.0",
+    "uuid": "^2.0.1"
+  }
+}
