@@ -14,7 +14,7 @@
     "apis"
   ],
   "author": "Andreas Åkre Solberg <andreas.solberg@uninett.no>",
-  "license": "ISC",
+  "license": "LGPL-2.1",
   "dependencies": {
     "chalk": "^1.1.1",
     "cliff": "^0.1.10",
