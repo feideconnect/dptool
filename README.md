@@ -32,7 +32,8 @@ Usage
 	 dptool orgs get [orgid]   Show organization
 
 	 options: 
-	    --json    Print all info instead of simple listings..
+	    --json    Print JSON output
+	    --pretty  Pretty print JSON with colours
 
 Example:
 
