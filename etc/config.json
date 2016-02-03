@@ -1,8 +1,8 @@
 {
     "authorization": "https://auth.feideconnect.no/oauth/authorization",
     "token": "https://auth.feideconnect.no/oauth/token",
-    "client_id": "____",
-    "client_secret": "____",
+    "client_id": "___",
+    "client_secret": "___",
     "redirect_uri": "http://127.0.0.1:12012/callback",
 	"apis": {
 		"auth": "https://auth.feideconnect.no",

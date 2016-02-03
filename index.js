@@ -34,6 +34,8 @@ CLI.prototype.init = function() {
 
 	if (this.argv.help) {
 		this.help();
+	} else if(this.c('configure')) {
+		this.d.configure(this.argv._[1], this.argv._[2]);
 	} else if(this.c('auth')) {
 		this.d.auth();
 	} else if(this.c('me')) {
@@ -82,6 +84,7 @@ CLI.prototype.init = function() {
 }
 
 CLI.prototype.help = function() {
+	console.log(" dptool configure [id] [secret]          Configure your CLI client.");
 	console.log(" dptool auth                             Authenticate user.");
 	console.log();
 	console.log(" dptool me                               About me (userinfo).");

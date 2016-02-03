@@ -1,6 +1,6 @@
 {
   "name": "dptool",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "CLI tool to interact with Dataporten APIs",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,10 @@
   "author": "Andreas Åkre Solberg <andreas.solberg@uninett.no>",
   "license": "LGPL-2.1",
   "dependencies": {
-    "chalk": "^1.1.1",
     "cliff": "^0.1.10",
     "easy-table": "^1.0.0",
     "express": "^4.13.4",
+    "extend": "^3.0.0",
     "minimist": "^1.2.0",
     "moment": "^2.11.1",
     "openurl": "^1.1.1",
