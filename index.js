@@ -106,13 +106,18 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs update -f [filename]        Update organization");
 	console.log(" dptool orgs service add [orgid] [srv]   Add service for an org");
 	console.log(" dptool orgs service remove [orgid] [srv] Remove service for an org");
-	console.log("        [srv] may be one of ");
-	console.log("             auth, pilot, avtale ");
+	console.log("        [srv] may be one of auth, pilot, avtale ");
 	console.log();
 	console.log(" options: ");
 	console.log("    --json     Print all info instead of simple listings..");
 	console.log("    --pretty   Pretty print JSON with colours..");
 	console.log("    --o [file] Output JSON to file");
+	console.log("    --sort [field]    Sort by specific field");
+	console.log("    --reverse         Reverse sort");
+	console.log("    --limit [num]     Limit rows");
+	console.log();
+	console.log(" experimental: ");
+	console.log("    --summary         List numbers of clients per user (only for clients all)");
 	console.log();
 }
 
