@@ -21,23 +21,46 @@ Prepare
 
 Usage 
 
-	 dptool auth               Authenticate user.
-	 dptool me                 About me (userinfo).
-	 dptool groups me          List my groups.
-	 dptool clients all        List all clients.
-	 dptool clients mine       List my clients.
-	 dptool apis all           List all APIs.
-	 dptool apis mine          List my APIS.
-	 dptool orgs list          List organizations.
-	 dptool orgs get [orgid]   Show organization
+	 dptool auth                             Authenticate user.
+
+	 dptool me                               About me (userinfo).
+	 dptool groups me                        List my groups.
+
+	 dptool clients all                      List all clients.
+	 dptool clients mine                     List my clients.
+	 dptool clients get [id]                 Get specific client
+	 dptool clients delete [id]              Delete specific client
+	 dptool clients create -f [filename]     Register new client
+	 dptool clients update -f [filename]     Update existing client
+
+	 dptool apis all                         List all APIs.
+	 dptool apis mine                        List my APIS.
+	 dptool apis get [id]                    Get specific API
+	 dptool apis delete [id]                 Delete specific API
+	 dptool apis create -f [filename]        Register new API
+	 dptool apis update -f [filename]        Update existing API
+
+	 dptool orgs list                        List organizations.
+	 dptool orgs get [orgid]                 Show organization
+	 dptool orgs update -f [filename]        Update organization
+	 dptool orgs service add [orgid] [srv]   Add service for an org
+	 dptool orgs service remove [orgid] [srv] Remove service for an org
+	        [srv] may be one of auth, pilot, avtale 
 
 	 options: 
-	    --json    Print JSON output
-	    --pretty  Pretty print JSON with colours
+	    --json     Print all info instead of simple listings..
+	    --pretty   Pretty print JSON with colours..
+	    --o [file] Output JSON to file
+	    --sort [field]    Sort by specific field
+	    --reverse         Reverse sort
+	    --limit [num]     Limit rows
+
+	 experimental: 
+	    --summary         List numbers of clients per user (only for clients all)
 
 Example:
 
-	[andreas@dmandsol14:dptool]$ dptool  groups me
+	$ dptool  groups me
 	id                                             displayName                            
 	---------------------------------------------  ---------------------------------------
 	fc:orgadmin:uninett.no                         Administratorer for UNINETT            
