@@ -1,12 +1,12 @@
 {
-    "authorization": "https://auth.feideconnect.no/oauth/authorization",
-    "token": "https://auth.feideconnect.no/oauth/token",
-    "client_id": "___",
-    "client_secret": "___",
-    "redirect_uri": "http://127.0.0.1:12012/callback",
+	"authorization": "https://auth.dataporten.no/oauth/authorization",
+	"token": "https://auth.dataporten.no/oauth/token",
+	"client_id": "___",
+	"client_secret": "___",
+	"redirect_uri": "http://127.0.0.1:12012/callback",
 	"apis": {
-		"auth": "https://auth.feideconnect.no",
-		"core": "https://api.feideconnect.no",
-		"groups": "https://groups-api.feideconnect.no"
+		"auth": "https://auth.dataporten.no",
+		"core": "https://api.dataporten.no",
+		"groups": "https://groups-api.dataporten.no"
 	}
 }
