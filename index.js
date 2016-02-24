@@ -114,6 +114,8 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs update -f [filename]        Update organization");
 	console.log(" dptool orgs service add [orgid] [srv]   Add service for an org");
 	console.log(" dptool orgs service remove [orgid] [srv] Remove service for an org");
+	console.log(" dptool orgs logo get [orgid] -o [file]  Get logo and store to disk");
+	console.log(" dptool orgs logo set [orgid] -f [file]  Upload logo from disk");
 	console.log("        [srv] may be one of auth, pilot, avtale ");
 	console.log();
 	console.log(" options: ");
