@@ -50,6 +50,8 @@ CLI.prototype.init = function() {
 		this.d.orgServiceAdd(this.argv._[3], this.argv._[4]);
 	} else if(this.c('orgs', 'service', 'remove')) {
 		this.d.orgServiceRemove(this.argv._[3], this.argv._[4]);
+	} else if(this.c('orgs', 'logo', 'get')) {
+		this.d.orgLogoGet(this.argv._[3]);
 	} else if(this.c('orgs', 'update')) {
 		this.d.orgUpdate();
 	} else if(this.c('clients', 'all')) {
