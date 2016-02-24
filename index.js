@@ -1,7 +1,8 @@
 #!/usr/bin/env node
+
 "use strict";
 
-var 
+var
 	Dataporten = require('./lib/Dataporten').Dataporten,
 	argv = require('minimist')(process.argv.slice(2));
 
@@ -13,7 +14,7 @@ var CLI = function() {
 
 CLI.prototype.c = function(cmd, cmd2) {
 
-	for(var i = 0; i < arguments.length; i++) {
+	for (var i = 0; i < arguments.length; i++) {
 		if (i > this.argv._.length) {
 			return false;
 		}
@@ -34,49 +35,49 @@ CLI.prototype.init = function() {
 
 	if (this.argv.help) {
 		this.help();
-	} else if(this.c('configure')) {
+	} else if (this.c('configure')) {
 		this.d.configure(this.argv._[1], this.argv._[2]);
-	} else if(this.c('auth')) {
+	} else if (this.c('auth')) {
 		this.d.auth();
-	} else if(this.c('me')) {
+	} else if (this.c('me')) {
 		this.d.me();
-	} else if(this.c('groups', 'me')) {
+	} else if (this.c('groups', 'me')) {
 		this.d.groups();
-	} else if(this.c('orgs', 'list')) {
+	} else if (this.c('orgs', 'list')) {
 		this.d.orgs();
-	} else if(this.c('orgs', 'get')) {
+	} else if (this.c('orgs', 'get')) {
 		this.d.org(this.argv._[2]);
-	} else if(this.c('orgs', 'service', 'add')) {
+	} else if (this.c('orgs', 'service', 'add')) {
 		this.d.orgServiceAdd(this.argv._[3], this.argv._[4]);
-	} else if(this.c('orgs', 'service', 'remove')) {
+	} else if (this.c('orgs', 'service', 'remove')) {
 		this.d.orgServiceRemove(this.argv._[3], this.argv._[4]);
-	} else if(this.c('orgs', 'logo', 'get')) {
+	} else if (this.c('orgs', 'logo', 'get')) {
 		this.d.orgLogoGet(this.argv._[3]);
-	} else if(this.c('orgs', 'update')) {
+	} else if (this.c('orgs', 'update')) {
 		this.d.orgUpdate();
-	} else if(this.c('clients', 'all')) {
+	} else if (this.c('clients', 'all')) {
 		this.d.clientsAll();
-	} else if(this.c('clients', 'mine')) {
+	} else if (this.c('clients', 'mine')) {
 		this.d.clientsMine();
-	} else if(this.c('clients', 'get')) {
+	} else if (this.c('clients', 'get')) {
 		this.d.client(this.argv._[2]);
-	} else if(this.c('clients', 'delete')) {
+	} else if (this.c('clients', 'delete')) {
 		this.d.clientDelete();
-	} else if(this.c('clients', 'create')) {
+	} else if (this.c('clients', 'create')) {
 		this.d.clientsCreate();
-	} else if(this.c('clients', 'update')) {
+	} else if (this.c('clients', 'update')) {
 		this.d.clientsUpdate();
-	} else if(this.c('apis', 'all')) {
+	} else if (this.c('apis', 'all')) {
 		this.d.apisAll();
-	} else if(this.c('apis', 'mine')) {
+	} else if (this.c('apis', 'mine')) {
 		this.d.apisMine();
-	} else if(this.c('apis', 'get')) {
+	} else if (this.c('apis', 'get')) {
 		this.d.apiGet(this.argv._[2]);
-	} else if(this.c('apis', 'delete')) {
+	} else if (this.c('apis', 'delete')) {
 		this.d.apiDelete();
-	} else if(this.c('apis', 'create')) {
+	} else if (this.c('apis', 'create')) {
 		this.d.apisCreate();
-	} else if(this.c('apis', 'update')) {
+	} else if (this.c('apis', 'update')) {
 		this.d.apisUpdate();
 	} else {
 		console.log("No reckognized valid command...");
@@ -117,6 +118,7 @@ CLI.prototype.help = function() {
 	console.log("    --json     Print all info instead of simple listings..");
 	console.log("    --pretty   Pretty print JSON with colours..");
 	console.log("    --o [file] Output JSON to file");
+	console.log("    --configset [set] Read from .dptool-config-[set].json ");
 	console.log("    --sort [field]    Sort by specific field");
 	console.log("    --reverse         Reverse sort");
 	console.log("    --limit [num]     Limit rows");
