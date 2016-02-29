@@ -39,6 +39,8 @@ CLI.prototype.init = function() {
 		this.d.configure(this.argv._[1], this.argv._[2]);
 	} else if (this.c('auth')) {
 		this.d.auth();
+	} else if (this.c('token')) {
+		this.d.customAuth(this.argv._[1], this.argv._[2]);
 	} else if (this.c('me')) {
 		this.d.me();
 	} else if (this.c('groups', 'me')) {
@@ -47,6 +49,8 @@ CLI.prototype.init = function() {
 		this.d.orgs();
 	} else if (this.c('orgs', 'get')) {
 		this.d.org(this.argv._[2]);
+	} else if (this.c('orgs', 'create')) {
+		this.d.orgsCreate();
 	} else if (this.c('orgs', 'service', 'add')) {
 		this.d.orgServiceAdd(this.argv._[3], this.argv._[4]);
 	} else if (this.c('orgs', 'service', 'remove')) {
@@ -111,12 +115,16 @@ CLI.prototype.help = function() {
 	console.log();
 	console.log(" dptool orgs list                        List organizations.");
 	console.log(" dptool orgs get [orgid]                 Show organization");
+	console.log(" dptool orgs create -f [filename]        Create organization");
 	console.log(" dptool orgs update -f [filename]        Update organization");
 	console.log(" dptool orgs service add [orgid] [srv]   Add service for an org");
 	console.log(" dptool orgs service remove [orgid] [srv] Remove service for an org");
 	console.log(" dptool orgs logo get [orgid] -o [file]  Get logo and store to disk");
 	console.log(" dptool orgs logo set [orgid] -f [file]  Upload logo from disk");
 	console.log("        [srv] may be one of auth, pilot, avtale ");
+	console.log();
+	console.log(" dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.");
+	console.log("                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
 	console.log();
 	console.log(" options: ");
 	console.log("    --json     Print all info instead of simple listings..");
