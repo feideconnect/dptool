@@ -41,6 +41,8 @@ CLI.prototype.init = function() {
 		this.d.auth();
 	} else if (this.c('token')) {
 		this.d.customAuth(this.argv._[1], this.argv._[2]);
+	} else if (this.c('gk')) {
+		this.d.gk(this.argv._[1], this.argv._[2], this.argv._[3]);
 	} else if (this.c('me')) {
 		this.d.me();
 	} else if (this.c('groups', 'me')) {
@@ -132,6 +134,8 @@ CLI.prototype.help = function() {
 	console.log();
 	console.log(" dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.");
 	console.log("                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
+	console.log(" dptool gk [id] [token] [path]           Perform a GET request to a gatekeeper endpoint");
+	console.log("                           Example: dptool gk testapi 12345 /foo");
 	console.log();
 	console.log(" options: ");
 	console.log("    --json     Print all info instead of simple listings..");
