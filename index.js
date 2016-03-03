@@ -4,6 +4,7 @@
 
 var
 	Dataporten = require('./lib/Dataporten').Dataporten,
+	VersionInfo = require('./lib/VersionInfo').VersionInfo,
 	argv = require('minimist')(process.argv.slice(2));
 
 
@@ -39,6 +40,9 @@ CLI.prototype.init = function() {
 		this.d.configure(this.argv._[1], this.argv._[2]);
 	} else if (this.c('auth')) {
 		this.d.auth();
+	} else if (this.c('version')) {
+		var version = new VersionInfo(this.argv);
+		version.get();
 	} else if (this.c('token')) {
 		this.d.customAuth(this.argv._[1], this.argv._[2]);
 	} else if (this.c('gk')) {
@@ -136,6 +140,8 @@ CLI.prototype.help = function() {
 	console.log("                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
 	console.log(" dptool gk [id] [token] [path]           Perform a GET request to a gatekeeper endpoint");
 	console.log("                           Example: dptool gk testapi 12345 /foo");
+	console.log();
+	console.log(" dptool version                          Get details about the deployed versions of Dataporten");
 	console.log();
 	console.log(" options: ");
 	console.log("    --json     Print all info instead of simple listings..");
