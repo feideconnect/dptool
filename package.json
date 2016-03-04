@@ -1,36 +1,37 @@
 {
-	"name": "dptool",
-	"version": "1.5.1",
-	"description": "CLI tool to interact with Dataporten APIs",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/feideconnect/dptool.git"
-	},
-	"keywords": [
-		"authentication",
-		"authorization",
-		"cli",
-		"tool",
-		"apis"
-	],
-	"bin": {
-		"dptool": "./bin/dptool"
-	},
-	"author": "Andreas Åkre Solberg <andreas.solberg@uninett.no>",
-	"license": "LGPL-2.1",
-	"dependencies": {
-		"cliff": "^0.1.10",
-		"easy-table": "^1.0.0",
-		"express": "^4.13.4",
-		"extend": "^3.0.0",
-		"minimist": "^1.2.0",
-		"moment": "^2.11.1",
-		"openurl": "^1.1.1",
-		"request": "^2.69.0",
-		"uuid": "^2.0.1"
-	}
+  "name": "dptool",
+  "version": "1.5.2",
+  "description": "CLI tool to interact with Dataporten APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feideconnect/dptool.git"
+  },
+  "keywords": [
+    "authentication",
+    "authorization",
+    "cli",
+    "tool",
+    "apis"
+  ],
+  "bin": {
+    "dptool": "./bin/dptool"
+  },
+  "author": "Andreas Åkre Solberg <andreas.solberg@uninett.no>",
+  "license": "LGPL-2.1",
+  "dependencies": {
+    "cliff": "^0.1.10",
+    "easy-table": "^1.0.0",
+    "express": "^4.13.4",
+    "extend": "^3.0.0",
+    "minimist": "^1.2.0",
+    "moment": "^2.11.1",
+    "openurl": "^1.1.1",
+    "promise-polyfill": "^3.1.0",
+    "request": "^2.69.0",
+    "uuid": "^2.0.1"
+  }
 }
