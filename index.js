@@ -26,11 +26,11 @@ CLI.prototype.c = function(cmd, cmd2) {
 	}
 
 	return true;
-}
+};
 
 CLI.prototype.init = function() {
 	if (this.argv.debug) {
-		console.log("Parsed arguments ")
+		console.log("Parsed arguments ");
 		console.dir(this.argv);
 	}
 
@@ -100,7 +100,7 @@ CLI.prototype.init = function() {
 		console.log();
 		this.help();
 	}
-}
+};
 
 CLI.prototype.help = function() {
 	console.log(" dptool configure [id] [secret]          Configure your CLI client.");
@@ -155,7 +155,7 @@ CLI.prototype.help = function() {
 	console.log(" experimental: ");
 	console.log("    --summary         List numbers of clients per user (only for clients all)");
 	console.log();
-}
+};
 
 
 var c = new CLI();
