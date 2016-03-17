@@ -133,7 +133,7 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs service remove [orgid] [srv] Remove service for an org");
 	console.log(" dptool orgs logo get [orgid] -o [file]  Get logo and store to disk");
 	console.log(" dptool orgs logo set [orgid] -f [file]  Upload logo from disk");
-	console.log("        [srv] may be one of auth, pilot, avtale ");
+	console.log("        [srv] may be one of auth, pilot, avtale ");
 	console.log(" dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user");
 	console.log("        roles may be admin, mercantile, technical");
 	console.log(" dptool orgs removerole [orgid] [feideid]       Remove roles for a user");
