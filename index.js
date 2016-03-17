@@ -71,6 +71,8 @@ CLI.prototype.init = function() {
 		this.d.setRole(this.argv._[2], this.argv._[3], this.argv._[4]);
 	} else if (this.c('orgs', 'removerole')) {
 		this.d.removeRole(this.argv._[2], this.argv._[3]);
+	} else if (this.c('orgs', 'ldap_status')) {
+		this.d.ldapStatus(this.argv._[2]);
 	} else if (this.c('clients', 'all')) {
 		this.d.clientsAll();
 	} else if (this.c('clients', 'mine')) {
@@ -135,6 +137,7 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user");
 	console.log("        roles may be admin, mercantile, technical");
 	console.log(" dptool orgs removerole [orgid] [feideid]       Remove roles for a user");
+	console.log(" dptool orgs ldap_status [feideid]       Check ldap status for the org by looking up the specified feideid");
 	console.log();
 	console.log(" dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.");
 	console.log("                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
