@@ -67,6 +67,8 @@ CLI.prototype.init = function() {
 		this.d.orgLogoSet(this.argv._[3]);
 	} else if (this.c('orgs', 'update')) {
 		this.d.orgUpdate();
+	} else if (this.c('orgs', 'roles')) {
+		this.d.listRoles(this.argv._[2]);
 	} else if (this.c('orgs', 'setrole')) {
 		this.d.setRole(this.argv._[2], this.argv._[3], this.argv._[4]);
 	} else if (this.c('orgs', 'removerole')) {
@@ -136,6 +138,7 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs logo get [orgid] -o [file]  Get logo and store to disk");
 	console.log(" dptool orgs logo set [orgid] -f [file]  Upload logo from disk");
 	console.log("        [srv] may be one of auth, pilot, avtale ");
+	console.log(" dptool orgs roles [orgid]               List roles for an organization");
 	console.log(" dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user");
 	console.log("        roles may be admin, mercantile, technical");
 	console.log(" dptool orgs removerole [orgid] [feideid]       Remove roles for a user");
