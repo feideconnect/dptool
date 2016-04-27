@@ -3,24 +3,18 @@
 Dataporten Command Line Tool
 
 
-Install dependencies
+Install
 
-	npm install
+	npm install -g dptool
 
-Configure
+Configure (se internal documentation)
 
-	cp etc/config.template.json etc/config.json
+	dptool configure xxxx-xxxx-xxx xxxx-xxxx-xxxx
 
-> Then add the application secret into the config.
-
-
-Prepare
-
-	mv /usr/local/bin/dptool $PWD/index.js
-	chmod a+x /usr/local/bin/dptool
 
 Usage 
 
+	 dptool configure [id] [secret]          Configure your CLI client.
 	 dptool auth                             Authenticate user.
 
 	 dptool me                               About me (userinfo).
@@ -42,15 +36,31 @@ Usage
 
 	 dptool orgs list                        List organizations.
 	 dptool orgs get [orgid]                 Show organization
+	 dptool orgs create -f [filename]        Create organization
 	 dptool orgs update -f [filename]        Update organization
 	 dptool orgs service add [orgid] [srv]   Add service for an org
 	 dptool orgs service remove [orgid] [srv] Remove service for an org
-	        [srv] may be one of auth, pilot, avtale 
+	 dptool orgs logo get [orgid] -o [file]  Get logo and store to disk
+	 dptool orgs logo set [orgid] -f [file]  Upload logo from disk
+	        [srv] may be one of auth, pilot, avtale 
+	 dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user
+	        roles may be admin, mercantile, technical
+	 dptool orgs removerole [orgid] [feideid]       Remove roles for a user
+	 dptool orgs ldap_status [feideid]       Check ldap status for the org by looking up the specified feideid
+	 dptool orgs peoplesearch [realm] [searchterm] [--sameorg]  Test people search for an organization. Use --sameorg to pretent to be in the same organization
+
+	 dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.
+	                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback
+	 dptool gk [id] [token] [path]           Perform a GET request to a gatekeeper endpoint
+	                           Example: dptool gk testapi 12345 /foo
+
+	 dptool version                          Get details about the deployed versions of Dataporten
 
 	 options: 
 	    --json     Print all info instead of simple listings..
 	    --pretty   Pretty print JSON with colours..
 	    --o [file] Output JSON to file
+	    --configset [set] Read from .dptool-config-[set].json 
 	    --sort [field]    Sort by specific field
 	    --reverse         Reverse sort
 	    --limit [num]     Limit rows
