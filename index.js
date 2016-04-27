@@ -26,11 +26,11 @@ CLI.prototype.c = function(cmd, cmd2) {
 	}
 
 	return true;
-}
+};
 
 CLI.prototype.init = function() {
 	if (this.argv.debug) {
-		console.log("Parsed arguments ")
+		console.log("Parsed arguments ");
 		console.dir(this.argv);
 	}
 
@@ -67,10 +67,16 @@ CLI.prototype.init = function() {
 		this.d.orgLogoSet(this.argv._[3]);
 	} else if (this.c('orgs', 'update')) {
 		this.d.orgUpdate();
+	} else if (this.c('orgs', 'roles')) {
+		this.d.listRoles(this.argv._[2]);
 	} else if (this.c('orgs', 'setrole')) {
 		this.d.setRole(this.argv._[2], this.argv._[3], this.argv._[4]);
 	} else if (this.c('orgs', 'removerole')) {
 		this.d.removeRole(this.argv._[2], this.argv._[3]);
+	} else if (this.c('orgs', 'ldap_status')) {
+		this.d.ldapStatus(this.argv._[2]);
+	} else if (this.c('orgs', 'peoplesearch')) {
+		this.d.peopleSearch(this.argv._[2], this.argv._[3], this.argv.sameorg);
 	} else if (this.c('clients', 'all')) {
 		this.d.clientsAll();
 	} else if (this.c('clients', 'mine')) {
@@ -100,7 +106,7 @@ CLI.prototype.init = function() {
 		console.log();
 		this.help();
 	}
-}
+};
 
 CLI.prototype.help = function() {
 	console.log(" dptool configure [id] [secret]          Configure your CLI client.");
@@ -131,10 +137,13 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs service remove [orgid] [srv] Remove service for an org");
 	console.log(" dptool orgs logo get [orgid] -o [file]  Get logo and store to disk");
 	console.log(" dptool orgs logo set [orgid] -f [file]  Upload logo from disk");
-	console.log("        [srv] may be one of auth, pilot, avtale ");
+	console.log("        [srv] may be one of auth, pilot, avtale ");
+	console.log(" dptool orgs roles [orgid]               List roles for an organization");
 	console.log(" dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user");
 	console.log("        roles may be admin, mercantile, technical");
 	console.log(" dptool orgs removerole [orgid] [feideid]       Remove roles for a user");
+	console.log(" dptool orgs ldap_status [feideid]       Check ldap status for the org by looking up the specified feideid");
+	console.log(" dptool orgs peoplesearch [realm] [searchterm] [--sameorg]  Test people search for an organization. Use --sameorg to pretent to be in the same organization");
 	console.log();
 	console.log(" dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.");
 	console.log("                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
@@ -155,7 +164,7 @@ CLI.prototype.help = function() {
 	console.log(" experimental: ");
 	console.log("    --summary         List numbers of clients per user (only for clients all)");
 	console.log();
-}
+};
 
 
 var c = new CLI();
