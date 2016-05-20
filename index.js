@@ -46,7 +46,7 @@ CLI.prototype.init = function() {
 	} else if (this.c('token')) {
 		this.d.customAuth(this.argv._[1], this.argv._[2]);
 	} else if (this.c('gk')) {
-		this.d.gk(this.argv._[1], this.argv._[2], this.argv._[3]);
+		this.d.gk(this.argv._[1], this.argv._[2]);
 	} else if (this.c('me')) {
 		this.d.me();
 	} else if (this.c('groups', 'me')) {
@@ -146,9 +146,10 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs peoplesearch [realm] [searchterm] [--sameorg]  Test people search for an organization. Use --sameorg to pretent to be in the same organization");
 	console.log();
 	console.log(" dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.");
-	console.log("                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
-	console.log(" dptool gk [id] [token] [path]           Perform a GET request to a gatekeeper endpoint");
-	console.log("                           Example: dptool gk testapi 12345 /foo");
+	console.log("                                          Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback");
+	console.log();
+	console.log(" dptool gk [id] [path]                   Perform a GET request to a gatekeeper endpoint");
+	console.log("                                          Example: dptool gk testapi /foo --configset clientx");
 	console.log();
 	console.log(" dptool version                          Get details about the deployed versions of Dataporten");
 	console.log();

@@ -1,6 +1,6 @@
 {
 	"name": "dptool",
-	"version": "1.7.1",
+	"version": "1.8.0",
 	"description": "CLI tool to interact with Dataporten APIs",
 	"main": "index.js",
 	"scripts": {
