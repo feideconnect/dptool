@@ -43,9 +43,9 @@ Usage
 	 dptool orgs logo get [orgid] -o [file]  Get logo and store to disk
 	 dptool orgs logo set [orgid] -f [file]  Upload logo from disk
 	        [srv] may be one of auth, pilot, avtale 
-	 dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user
+	 dptool orgs setrole [orgid] [identity] [roles]  Set roles for a user
 	        roles may be admin, mercantile, technical
-	 dptool orgs removerole [orgid] [feideid]       Remove roles for a user
+	 dptool orgs removerole [orgid] [identity]       Remove roles for a user
 	 dptool orgs ldap_status [feideid]       Check ldap status for the org by looking up the specified feideid
 	 dptool orgs peoplesearch [realm] [searchterm] [--sameorg]  Test people search for an organization. Use --sameorg to pretent to be in the same organization
 
