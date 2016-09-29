@@ -139,9 +139,9 @@ CLI.prototype.help = function() {
 	console.log(" dptool orgs logo set [orgid] -f [file]  Upload logo from disk");
 	console.log("        [srv] may be one of auth, pilot, avtale ");
 	console.log(" dptool orgs roles [orgid]               List roles for an organization");
-	console.log(" dptool orgs setrole [orgid] [feideid] [roles]  Set roles for a user");
+	console.log(" dptool orgs setrole [orgid] [identity] [roles]  Set roles for a user");
 	console.log("        roles may be admin, mercantile, technical");
-	console.log(" dptool orgs removerole [orgid] [feideid]       Remove roles for a user");
+	console.log(" dptool orgs removerole [orgid] [identity]       Remove roles for a user");
 	console.log(" dptool orgs ldap_status [feideid]       Check ldap status for the org by looking up the specified feideid");
 	console.log(" dptool orgs peoplesearch [realm] [searchterm] [--sameorg]  Test people search for an organization. Use --sameorg to pretent to be in the same organization");
 	console.log();
