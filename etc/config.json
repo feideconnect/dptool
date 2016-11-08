@@ -5,7 +5,9 @@
 	"client_secret": "___",
 	"redirect_uri": "http://127.0.0.1:12012/callback",
 	"apis": {
+		"apigkadmin": "https://apigkadmin.dataporten-api.no",
 		"auth": "https://auth.dataporten.no",
+		"clientadmin": "https://clientadmin.dataporten-api.no",
 		"core": "https://api.dataporten.no",
 		"groups": "https://groups-api.dataporten.no"
 	}
