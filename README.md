@@ -25,24 +25,25 @@ Usage
 	 dptool clients get [id]                 Get specific client
 	 dptool clients delete [id]              Delete specific client
 	 dptool clients create -f [filename]     Register new client
-	 dptool clients update -f [filename]     Update existing client
+	 dptool clients update [id] -f [filename] Update existing client
 
 	 dptool apis all                         List all APIs.
 	 dptool apis mine                        List my APIS.
 	 dptool apis get [id]                    Get specific API
 	 dptool apis delete [id]                 Delete specific API
 	 dptool apis create -f [filename]        Register new API
-	 dptool apis update -f [filename]        Update existing API
+	 dptool apis update [id] -f [filename]   Update existing API
 
 	 dptool orgs list                        List organizations.
 	 dptool orgs get [orgid]                 Show organization
 	 dptool orgs create -f [filename]        Create organization
-	 dptool orgs update -f [filename]        Update organization
+	 dptool orgs update [orgid] -f [filename] Update organization
 	 dptool orgs service add [orgid] [srv]   Add service for an org
 	 dptool orgs service remove [orgid] [srv] Remove service for an org
 	 dptool orgs logo get [orgid] -o [file]  Get logo and store to disk
 	 dptool orgs logo set [orgid] -f [file]  Upload logo from disk
 	        [srv] may be one of auth, pilot, avtale 
+	 dptool orgs roles [orgid]               List roles for an organization
 	 dptool orgs setrole [orgid] [identity] [roles]  Set roles for a user
 	        roles may be admin, mercantile, technical
 	 dptool orgs removerole [orgid] [identity]       Remove roles for a user
@@ -50,9 +51,10 @@ Usage
 	 dptool orgs peoplesearch [realm] [searchterm] [--sameorg]  Test people search for an organization. Use --sameorg to pretent to be in the same organization
 
 	 dptool token [id] [secret]              Custom request to just get a token for a specific client_id and secret.
-	                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback
-	 dptool gk [id] [token] [path]           Perform a GET request to a gatekeeper endpoint
-	                           Example: dptool gk testapi 12345 /foo
+ 	                           Make sure to configure redirect_uri for this client: http://127.0.0.1:12012/callback
+
+	 dptool gk [id] [path]                   Perform a GET request to a gatekeeper endpoint
+	                                          Example: dptool gk testapi /foo --configset clientx
 
 	 dptool version                          Get details about the deployed versions of Dataporten
 
