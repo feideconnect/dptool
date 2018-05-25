@@ -51,6 +51,12 @@ CLI.prototype.init = function() {
 		this.d.me();
 	} else if (this.c('groups', 'me')) {
 		this.d.groups();
+	} else if (this.c('merge')) {
+
+		this.argv._.shift()
+		let to = this.argv._.shift()
+		let from = this.argv._
+		this.d.merge(to, from)
 	} else if (this.c('orgs', 'list')) {
 		this.d.orgs();
 	} else if (this.c('orgs', 'get')) {
